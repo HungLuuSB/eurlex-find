@@ -18,7 +18,10 @@ BASE_DIR: Path = Path(__file__).resolve().parent
 # Data Paths
 DATA_DIR: Path = BASE_DIR / "data"
 RAW_DATA_PATH: Path = DATA_DIR / "raw" / "eurlex_dataset.csv"
-PROCESSED_DATA_DIR: Path = DATA_DIR / "processed"
+PROCESSED_DATA_DIR: Path = (
+    DATA_DIR / "processed"
+)  # Add this line below PROCESSED_DATA_DIR
+PROCESSED_CORPUS_PATH: Path = PROCESSED_DATA_DIR / "processed_corpus.pkl"
 INDEX_DIR: Path = DATA_DIR / "indices"
 
 # Model Paths
@@ -26,6 +29,14 @@ MODELS_DIR: Path = BASE_DIR / "models"
 SVC_MODELS_DIR: Path = MODELS_DIR / "svc_classifiers"
 EMBEDDINGS_DIR: Path = MODELS_DIR / "embeddings"
 
+# Output paths for the core search engine data structures
+INVERTED_INDEX_PATH: Path = INDEX_DIR / "inverted_index.pkl"
+DOCUMENT_METADATA_PATH: Path = INDEX_DIR / "document_metadata.pkl"
+
+# Artifact paths for the classification pipeline
+TFIDF_VECTORIZER_PATH: Path = MODELS_DIR / "tfidf_vectorizer.pkl"
+LABEL_BINARIZER_PATH: Path = MODELS_DIR / "label_binarizer.pkl"
+MULTI_LABEL_SVC_PATH: Path = SVC_MODELS_DIR / "one_vs_rest_svc.pkl"
 # ==========================================
 # 2. LOGGING CONFIGURATION
 # ==========================================
@@ -40,7 +51,14 @@ LOG_LEVEL: int = logging.INFO
 SPACY_MODEL: str = "en_core_web_sm"
 MIN_TOKEN_LENGTH: int = 2
 # Defines characters to keep during alphanumeric filtering
-ALLOWED_CHARS_REGEX: str = r"[^a-zA-Z0-9\s]"
+ALLOWED_CHARS_REGEX: str = r"[^a-zA-Z0-9\s]"  # The maximum number of rows to load into RAM at one time during preprocessing
+PREPROCESSING_CHUNK_SIZE: int = 5000
+
+SPACY_N_PROCESS: int = 1
+# The maximum character limit per document to prevent Out-Of-Memory (OOM) crashes.
+# 100,000 characters is approximately 15,000 words, which is more than sufficient
+# for BM25 to capture the core semantic vocabulary of a legal document.
+MAX_CHAR_LENGTH: int = 100000
 
 # ==========================================
 # 4. CLASSIFICATION HYPERPARAMETERS (SVC & TF-IDF)

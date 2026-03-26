@@ -1,0 +1,66 @@
+(eurlex-find) [hungluu12@hungluu12 eurlex-find]$  python -m application.search_engine
+2026-03-27 05:09:15 | INFO     | search_engine   | Booting up Search Engine. Loading artifacts into memory...
+2026-03-27 05:09:17 | INFO     | search_engine   | Search Engine is online and ready for queries.
+2026-03-27 05:09:17 | INFO     | search_engine   | Processing Query: 'veterinary controls and health certificates for bovine animals and pigmeat'
+
+==================================================
+SEARCH RESULTS FOR: 'veterinary controls and health certificates for bovine animals and pigmeat'
+==================================================
+Parsed Tokens: ['veterinary', 'control', 'health', 'certificate', 'bovine', 'animal', 'pigmeat']
+Predicted EUROVOC Tags: ['biosafety', 'health certificate', 'pigmeat', 'bovine species']
+Total Documents Found: 41422
+--------------------------------------------------
+1. CELEX: 31993d0020 | BM25 Score: 36.8567
+2. CELEX: 31992d0375 | BM25 Score: 36.3194
+3. CELEX: 31992d0040 | BM25 Score: 36.2176
+4. CELEX: 31991d0073 | BM25 Score: 35.9501
+5. CELEX: 31993d0398 | BM25 Score: 34.7285
+==================================================
+
+2026-03-27 05:09:17 | INFO     | search_engine   | Processing Query: 'financial aid and economic sanctions against china'
+
+==================================================
+SEARCH RESULTS FOR: 'financial aid and economic sanctions against china'
+==================================================
+Parsed Tokens: ['financial', 'aid', 'economic', 'sanction', 'china']
+Predicted EUROVOC Tags: ['china']
+Total Documents Found: 88841
+--------------------------------------------------
+1. CELEX: 32011d0860 | BM25 Score: 18.6552
+2. CELEX: 32010d0399 | BM25 Score: 18.5521
+3. CELEX: 32010d0668 | BM25 Score: 18.5074
+4. CELEX: 32008d0960 | BM25 Score: 18.3878
+5. CELEX: 32013d0183 | BM25 Score: 17.6313
+==================================================
+
+2026-03-27 05:09:18 | INFO     | search_engine   | Processing Query: 'what are the specific rules and regulations regarding the labelling of sea fish within the ec'
+
+==================================================
+SEARCH RESULTS FOR: 'what are the specific rules and regulations regarding the labelling of sea fish within the ec'
+==================================================
+Parsed Tokens: ['specific', 'rule', 'regulation', 'labelling', 'sea', 'fish', 'ec']
+Predicted EUROVOC Tags: ['labelling']
+Total Documents Found: 128358
+--------------------------------------------------
+1. CELEX: 32008d0589 | BM25 Score: 22.0347
+2. CELEX: 32008d0620 | BM25 Score: 21.0462
+3. CELEX: 32006d0656 | BM25 Score: 19.9480
+4. CELEX: 32013r0560 | BM25 Score: 19.7565
+5. CELEX: 31998l0087 | BM25 Score: 19.4595
+==================================================
+
+2026-03-27 05:09:18 | INFO     | search_engine   | Processing Query: 'automatic public tendering for cereals'
+
+==================================================
+SEARCH RESULTS FOR: 'automatic public tendering for cereals'
+==================================================
+Parsed Tokens: ['automatic', 'public', 'tendering', 'cereal']
+Predicted EUROVOC Tags: []
+Total Documents Found: 38615
+--------------------------------------------------
+1. CELEX: 31998r2812 | BM25 Score: 14.7090
+2. CELEX: 31998r1289 | BM25 Score: 14.0518
+3. CELEX: 31998r1188 | BM25 Score: 13.8954
+4. CELEX: 31998r1904 | BM25 Score: 13.6966
+5. CELEX: 31998r2246 | BM25 Score: 13.6349
+==================================================

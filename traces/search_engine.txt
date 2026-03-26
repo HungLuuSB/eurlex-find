@@ -1,0 +1,19 @@
+(eurlex-find) [hungluu12@hungluu12 eurlex-find]$  python -m application.search_engine
+2026-03-27 05:02:26 | INFO     | search_engine   | Booting up Search Engine. Loading artifacts into memory...
+2026-03-27 05:02:28 | INFO     | search_engine   | Search Engine is online and ready for queries.
+2026-03-27 05:02:28 | INFO     | search_engine   | Processing Query: 'import of apples and fresh fruit from third countries'
+
+==================================================
+SEARCH RESULTS FOR: 'import of apples and fresh fruit from third countries'
+==================================================
+Parsed Tokens: ['import', 'apple', 'fresh', 'fruit', 'country']
+Predicted EUROVOC Tags: ['origin of goods']
+Total Documents Found: 81535
+--------------------------------------------------
+1. CELEX: 31986r0636 | BM25 Score: 22.7270
+2. CELEX: 31987r3941 | BM25 Score: 22.2193
+3. CELEX: 31986r0637 | BM25 Score: 22.0134
+4. CELEX: 31986r3796 | BM25 Score: 21.9719
+5. CELEX: 32011r0669 | BM25 Score: 21.8986
+==================================================
+https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A31986R0636&qid=1774562621629

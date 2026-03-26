@@ -1,0 +1,129 @@
+(eurlex-find) [hungluu12@hungluu12 eurlex-find]$ python -m digestion.classifier_trainer
+2026-03-27 04:48:39 | INFO     | classifier_trainer | Initiating machine learning pipeline...
+2026-03-27 04:48:45 | INFO     | classifier_trainer | Loaded 134657 preprocessed documents.
+2026-03-27 04:48:45 | INFO     | classifier_trainer | Identifying the top 100 most frequent EUROVOC labels.
+2026-03-27 04:48:46 | INFO     | classifier_trainer | Binarizing target variables into a 2D matrix.
+2026-03-27 04:48:46 | INFO     | classifier_trainer | Joining token lists into text strings for vectorization.
+2026-03-27 04:48:47 | INFO     | classifier_trainer | Executing 80/20 Train/Test split.
+2026-03-27 04:48:47 | INFO     | classifier_trainer | Fitting TF-IDF Vectorizer and transforming text to sparse matrices.
+2026-03-27 04:50:00 | INFO     | classifier_trainer | Training 100 One-Vs-Rest Linear Support Vector Classifiers. This may take a few minutes...
+ 2026-03-27 04:54:57 | INFO     | classifier_trainer | Model training successfully converged.
+2026-03-27 04:54:57 | INFO     | classifier_trainer | Predicting on the Test set for evaluation.
+
+==================================================
+MODEL EVALUATION REPORT
+==================================================
+                                precision    recall  f1-score   support
+
+      community aid to exports       0.95      0.93      0.94      1593
+                        import       0.84      0.75      0.79      1354
+    automatic public tendering       0.96      0.92      0.94      1206
+                     aubergine       0.97      0.96      0.97      1103
+                   entry price       0.99      0.97      0.98      1093
+                        citron       0.98      0.96      0.97      1085
+                         apple       0.97      0.96      0.97       992
+               origin of goods       0.82      0.68      0.74       923
+                 third country       0.75      0.53      0.62       843
+              community import       0.92      0.78      0.85       818
+          import authorisation       0.86      0.76      0.81       747
+administration of tariff quota       0.89      0.84      0.86       736
+                    cct duties       0.88      0.83      0.85       671
+                           cmo       0.92      0.70      0.80       629
+                          rice       0.95      0.89      0.92       575
+                       cereals       0.91      0.78      0.84       545
+                     biosafety       0.68      0.51      0.58       502
+              kingdom of spain       0.82      0.68      0.74       517
+                 refined sugar       0.93      0.95      0.94       496
+          agri-monetary policy       0.86      0.84      0.85       463
+            veterinary control       0.81      0.67      0.73       456
+                  ban on sales       0.86      0.81      0.83       445
+                       apricot       0.95      0.77      0.85       431
+                          beef       0.91      0.76      0.83       436
+                      sea fish       0.89      0.82      0.85       444
+                     state aid       0.92      0.85      0.88       466
+                    ec country       0.68      0.28      0.39       424
+                  ec agreement       0.78      0.64      0.70       400
+                         grape       0.88      0.82      0.85       407
+          export authorisation       0.92      0.74      0.82       387
+          quantitative ceiling       0.65      0.39      0.49       377
+                 community aid       0.77      0.41      0.53       390
+                     labelling       0.85      0.64      0.73       360
+                           frg       0.80      0.70      0.74       367
+                    catch plan       0.89      0.88      0.88       373
+                    aid system       0.72      0.47      0.57       353
+                            na       0.80      0.58      0.67       332
+                      blockade       0.96      0.97      0.96       337
+                     marketing       0.72      0.36      0.48       296
+       exchange of information       0.68      0.31      0.42       323
+                  catch limits       0.90      0.85      0.87       329
+                        france       0.85      0.68      0.76       309
+            economic sanctions       0.92      0.95      0.94       310
+           intervention agency       0.92      0.66      0.77       313
+                  fishing area       0.80      0.77      0.78       331
+                       grading       0.74      0.43      0.54       331
+                     raw sugar       0.93      0.95      0.94       304
+          nationality of ships       0.91      0.92      0.92       318
+                        butter       0.93      0.89      0.91       321
+                      portugal       0.85      0.67      0.75       303
+                 dairy produce       0.86      0.70      0.77       330
+              italian republic       0.81      0.70      0.75       284
+       agri-foodstuffs product       0.76      0.66      0.70       283
+          representative price       0.94      0.95      0.95       280
+          agricultural product       0.76      0.46      0.57       281
+            health certificate       0.83      0.63      0.72       286
+                           pdo       0.96      0.90      0.93       291
+                united kingdom       0.84      0.64      0.73       280
+                        export       0.84      0.46      0.60       271
+             anti-dumping duty       0.89      0.85      0.87       308
+           product description       0.94      0.89      0.91       279
+                animal disease       0.85      0.67      0.75       273
+                     artichoke       0.75      0.62      0.68       257
+         approximation of laws       0.76      0.54      0.63       269
+         phytosanitary control       0.86      0.75      0.80       278
+                         china       0.89      0.85      0.87       274
+              aid to producers       0.74      0.50      0.60       237
+                   poultrymeat       0.93      0.82      0.87       239
+                          milk       0.85      0.68      0.75       270
+           preferential tariff       0.75      0.58      0.65       262
+           community financing       0.74      0.42      0.54       230
+ derogation from community law       0.80      0.60      0.69       211
+                          boar       0.86      0.77      0.82       234
+                       pigmeat       0.86      0.74      0.80       242
+               product quality       0.76      0.26      0.39       251
+            aid to agriculture       0.76      0.49      0.60       211
+                      food aid       0.90      0.72      0.80       233
+                         maize       0.89      0.79      0.84       203
+                 sugar product       0.83      0.83      0.83       218
+         control of foodstuffs       0.81      0.50      0.61       238
+           food product safety       0.84      0.69      0.76       217
+                           cct       0.87      0.66      0.75       217
+                   budget year       0.97      0.95      0.96       228
+                     olive oil       0.87      0.82      0.84       221
+             ec general budget       0.94      0.91      0.92       231
+          control of state aid       0.84      0.84      0.84       223
+                           usa       0.83      0.70      0.76       203
+                bovine species       0.87      0.73      0.79       226
+ restoration of customs duties       0.77      0.84      0.81       193
+                chemical agent       0.70      0.48      0.57       201
+              animal nutrition       0.83      0.60      0.69       198
+            technical standard       0.77      0.42      0.54       237
+                  common wheat       0.92      0.78      0.84       188
+  autonomous system of imports       0.70      0.19      0.30       206
+                      fructose       0.75      0.45      0.57       194
+                        supply       0.90      0.80      0.84       197
+                        fabric       0.83      0.65      0.73       208
+                        greece       0.78      0.60      0.68       182
+             obstacle to trade       0.83      0.57      0.68       187
+              community waters       0.86      0.78      0.82       195
+
+                     micro avg       0.88      0.74      0.80     39819
+                     macro avg       0.85      0.70      0.76     39819
+                  weighted avg       0.87      0.74      0.79     39819
+                   samples avg       0.42      0.38      0.39     39819
+
+Overall Hamming Loss: 0.0053 (Lower is better)
+==================================================
+
+2026-03-27 04:54:58 | INFO     | classifier_trainer | Serializing machine learning artifacts to disk...
+2026-03-27 04:54:58 | INFO     | classifier_trainer | Data Digestion Layer officially complete.
+(eurlex-find) [hungluu12@hungluu12 eurlex-find]$  
