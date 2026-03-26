@@ -1,0 +1,13 @@
+# Preprocessing and Text Manipulation
+spacy>=3.7.2
+tqdm>=4.66.1
+
+# Classical Machine Learning & Matrix Operations (SVC, TF-IDF)
+scikit-learn>=1.3.2
+numpy>=1.26.2
+pandas>=2.1.3
+scipy>=1.11.4
+
+# State-of-the-Art Semantic Retrieval
+sentence-transformers>=2.2.2
+torch>=2.1.1

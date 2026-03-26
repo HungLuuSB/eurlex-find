@@ -1,0 +1,43 @@
+# .gitignore
+
+# ----------------------------------------------------------------------
+# 1. Data Directories (Heavy Data)
+# ----------------------------------------------------------------------
+# Ignore all raw, processed, and index data to prevent repository bloat
+data/raw/*
+data/processed/*
+data/indices/*
+# Keep the directory structure intact by explicitly allowing a placeholder
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/indices/.gitkeep
+
+# ----------------------------------------------------------------------
+# 2. Model Directories (Binary Weights & Vectors)
+# ----------------------------------------------------------------------
+# Ignore trained SVC models and dense transformer embeddings
+models/svc_classifiers/*
+models/embeddings/*
+# Keep the directory structure intact
+!models/svc_classifiers/.gitkeep
+!models/embeddings/.gitkeep
+
+# ----------------------------------------------------------------------
+# 3. Python Environment & Cache Files
+# ----------------------------------------------------------------------
+# Standard Python ignores to keep the commit history clean
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# ----------------------------------------------------------------------
+# 4. IDE & System Files
+# ----------------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+*.swp
