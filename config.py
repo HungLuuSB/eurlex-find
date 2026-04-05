@@ -18,11 +18,14 @@ BASE_DIR: Path = Path(__file__).resolve().parent
 # Data Paths
 DATA_DIR: Path = BASE_DIR / "data"
 RAW_DATA_PATH: Path = DATA_DIR / "raw" / "eurlex_dataset.csv"
-PROCESSED_DATA_DIR: Path = (
-    DATA_DIR / "processed"
-)  # Add this line below PROCESSED_DATA_DIR
+PROCESSED_DATA_DIR: Path = DATA_DIR / "processed"
 PROCESSED_CORPUS_PATH: Path = PROCESSED_DATA_DIR / "processed_corpus.pkl"
 INDEX_DIR: Path = DATA_DIR / "indices"
+
+# Evaluation Data Paths (NEW)
+EVALUATION_DATA_DIR: Path = DATA_DIR / "evaluation"
+EURLEX_ID_MAPPINGS_PATH: Path = EVALUATION_DATA_DIR / "eurlex_ID_mappings.csv"
+EURLEX_EUROVOC_QRELS_PATH: Path = EVALUATION_DATA_DIR / "id2class_eurlex_eurovoc.qrels"
 
 # Model Paths
 MODELS_DIR: Path = BASE_DIR / "models"
@@ -37,6 +40,7 @@ DOCUMENT_METADATA_PATH: Path = INDEX_DIR / "document_metadata.pkl"
 TFIDF_VECTORIZER_PATH: Path = MODELS_DIR / "tfidf_vectorizer.pkl"
 LABEL_BINARIZER_PATH: Path = MODELS_DIR / "label_binarizer.pkl"
 MULTI_LABEL_SVC_PATH: Path = SVC_MODELS_DIR / "one_vs_rest_svc.pkl"
+
 # ==========================================
 # 2. LOGGING CONFIGURATION
 # ==========================================
@@ -50,14 +54,7 @@ LOG_LEVEL: int = logging.INFO
 # ==========================================
 SPACY_MODEL: str = "en_core_web_sm"
 MIN_TOKEN_LENGTH: int = 2
-# Defines characters to keep during alphanumeric filtering
-ALLOWED_CHARS_REGEX: str = r"[^a-zA-Z0-9\s]"  # The maximum number of rows to load into RAM at one time during preprocessing
-PREPROCESSING_CHUNK_SIZE: int = 5000
-
-SPACY_N_PROCESS: int = 1
 # The maximum character limit per document to prevent Out-Of-Memory (OOM) crashes.
-# 100,000 characters is approximately 15,000 words, which is more than sufficient
-# for BM25 to capture the core semantic vocabulary of a legal document.
 MAX_CHAR_LENGTH: int = 100000
 
 # ==========================================
@@ -81,18 +78,11 @@ BM25_K1: float = 1.5
 BM25_B: float = 0.75
 
 # ==========================================
-# 6. SEMANTIC RERANKING HYPERPARAMETERS
+# 6. HYBRID RETRIEVAL HYPERPARAMETERS (NEW)
 # ==========================================
-# The specific transformer model fine-tuned on legal text
-TRANSFORMER_MODEL_NAME: str = "nlpaueb/legal-bert-base-uncased"
-# The number of top documents retrieved by BM25 to pass to the semantic reranker
+# Weight for BM25 score in hybrid ranking (0.0 to 1.0)
+BM25_WEIGHT: float = 0.3
+# Weight for SVC classifier score in hybrid ranking (0.0 to 1.0)
+SVC_WEIGHT: float = 0.7
+# Number of candidates to retrieve before re-ranking
 TOP_K_CANDIDATES: int = 1000
-# The final number of documents returned to the user
-FINAL_TOP_K_RESULTS: int = 10
-
-# ==========================================
-# 7. BOOLEAN QUERY PREFIXES
-# ==========================================
-# Standardized prefixes for the Application Domain layer to parse
-PREFIX_NOT: str = "-"
-PREFIX_OR: str = "|"

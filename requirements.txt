@@ -11,3 +11,4 @@ scipy>=1.11.4
 # State-of-the-Art Semantic Retrieval
 sentence-transformers>=2.2.2
 torch>=2.1.1
+ranx>=0.3.21
