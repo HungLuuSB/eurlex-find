@@ -1,0 +1,66 @@
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loading label binarizer...
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loaded 100 trained labels
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loading ID mappings from eurlex_ID_mappings.csv...
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loaded 19914 valid mappings (skipped 26 nulls)
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loading qrels from id2class_eurlex_eurovoc.qrels...
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Loaded 52 queries, 14609 judgments
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Skipped 88127 labels not in training set
+2026-04-07 18:27:24 | INFO     | advanced_evaluator | Skipped 0 docs with missing ID mappings
+2026-04-07 18:27:24 | INFO     | search_engine   | Booting up Search Engine. Loading artifacts into memory...
+2026-04-07 18:27:29 | INFO     | search_engine   | Label format validated: community_aid_to_exports
+2026-04-07 18:27:29 | INFO     | search_engine   | Loading pre-computed label index...
+2026-04-07 18:27:29 | INFO     | search_engine   | Engine ready. 100 labels available.
+2026-04-07 18:27:29 | INFO     | search_engine   | Average 1987.7 docs per label
+2026-04-07 18:27:29 | INFO     | advanced_evaluator | 
+============================================================
+2026-04-07 18:27:29 | INFO     | advanced_evaluator | ORACLE MODE EVALUATION (Ground Truth Labels)
+2026-04-07 18:27:29 | INFO     | advanced_evaluator | ============================================================
+2026-04-07 18:27:29 | INFO     | advanced_evaluator | Processed 50/52 queries
+
+============================================================
+ORACLE MODE RESULTS (Upper Bound)
+============================================================
+Queries Evaluated: 52
+MAP            : 0.0206
+MRR            : 0.3597
+NDCG@10        : 0.2344
+PRECISION@10   : 0.2481
+RECALL@10      : 0.0133
+RECALL@50      : 0.0637
+============================================================
+
+2026-04-07 18:27:33 | INFO     | advanced_evaluator | 
+============================================================
+2026-04-07 18:27:33 | INFO     | advanced_evaluator | PREDICTED MODE EVALUATION (End-to-End)
+2026-04-07 18:27:33 | INFO     | advanced_evaluator | ============================================================
+2026-04-07 18:27:35 | INFO     | advanced_evaluator | Processed 50/52 queries
+
+============================================================
+PREDICTED MODE RESULTS (Real-World Performance)
+============================================================
+Queries Evaluated: 52
+MAP            : 0.0136
+MRR            : 0.2897
+NDCG@10        : 0.1768
+PRECISION@10   : 0.1865
+RECALL@10      : 0.0101
+RECALL@50      : 0.0446
+------------------------------------------------------------
+Label Prediction Statistics:
+  Correct:        46 (88.5%)
+  Incorrect:      2 (3.8%)
+  No Prediction:  4 (7.7%)
+============================================================
+
+
+============================================================
+PERFORMANCE GAP ANALYSIS
+============================================================
+Metric          Oracle     Predicted  Gap       
+------------------------------------------------------------
+MAP             0.0206     0.0136     0.0071    
+MRR             0.3597     0.2897     0.0700    
+NDCG@10         0.2344     0.1768     0.0576    
+PRECISION@10    0.2481     0.1865     0.0615    
+============================================================
+(eurlex-find) [hungluu12@hungluu12 eurlex-find]$ 
